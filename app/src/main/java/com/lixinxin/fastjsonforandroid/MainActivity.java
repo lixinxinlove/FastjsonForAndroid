@@ -8,6 +8,10 @@ import android.widget.Button;
 
 import com.alibaba.fastjson.JSON;
 import com.lixinxin.fastjsonforandroid.bean.User;
+import com.sunfusheng.marqueeview.MarqueeView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -38,6 +42,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void initData() {
         user1 = new User("lixinxin", true, 25);
 
+
+        MarqueeView marqueeView = (MarqueeView) findViewById(R.id.marqueeView);
+        MarqueeView marqueeView2 = (MarqueeView) findViewById(R.id.marqueeView2);
+
+        List<String> info = new ArrayList<>();
+        info.add("1. 大家好，我是李鑫鑫。");
+        info.add("2. 欢迎大家关注我哦！");
+        info.add("3. GitHub帐号：lixinxinlove");
+        marqueeView.startWithList(info);
+
+
+        String notice = "心中有阳光，脚底有力量！心中有阳光，脚底有力量！心中有阳光，脚底有力量！";
+        marqueeView2.startWithText(notice);
 
     }
 
